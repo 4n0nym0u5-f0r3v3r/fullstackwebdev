@@ -1,6 +1,3 @@
-CREATE USER 'myuser'@'%' IDENTIFIED BY 'mypassword';
-GRANT ALL PRIVILEGES ON myapp.* TO 'myuser'@'%';
-FLUSH PRIVILEGES;
 CREATE DATABASE IF NOT EXISTS authdb;
 USE authdb;
 CREATE TABLE IF NOT EXISTS users (
