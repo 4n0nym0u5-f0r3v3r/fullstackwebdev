@@ -12,6 +12,8 @@ services:
       - 3306
       - 33060
   app:
+    depends_on: 
+      - mysqlhost
     build:
       context: .
       dockerfile: Dockerfile
