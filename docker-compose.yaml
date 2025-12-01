@@ -1,0 +1,24 @@
+serivces:
+  mysqlhost:
+    image: mariadb:latest
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD: password
+      - MYSQL_DATABASE=authdb
+    volume:
+      - mysqldb_vol: /var/lib/mysql
+      - mysqldb_vol: /docker-entrypoint-initdb.d/:ro
+    expose:
+      - 3306
+      - 33060
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fullstack_app
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: always
+volumes:
+  mysqldb_vol: ./db
