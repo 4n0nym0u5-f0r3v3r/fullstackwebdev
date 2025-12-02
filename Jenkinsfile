@@ -15,7 +15,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh '''docker compose down -v && docker system prune -af
+        sh '''docker compose down && docker system prune -af
 docker compose up -d'''
       }
     }

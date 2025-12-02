@@ -1,6 +1,7 @@
 services:
   mysqlhost:
     image: mariadb:latest
+    container_name: fullstack_app_mysqlhost
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: "password"
