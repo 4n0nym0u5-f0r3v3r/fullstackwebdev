@@ -5,7 +5,7 @@ import Login from './components/Login';
 function App() {
     return (
         <div className="App">
-            <h1>Full Stack Authentication</h1>
+            <h1>Simple Fullstack</h1>
             <Signup />
             <Login />
         </div>
