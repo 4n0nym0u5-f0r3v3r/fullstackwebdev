@@ -12,9 +12,6 @@ services:
     expose:
       - 3306
       - 33060
-    ports:
-      - "3306:3306"
-      - "33060:33060"
   app:
     depends_on: 
       - mysqlhost
