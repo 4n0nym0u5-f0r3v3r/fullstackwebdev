@@ -14,9 +14,7 @@ services:
   app:
     depends_on: 
       - mysqlhost
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: graves869/fullstack-nginx-node:latest
     container_name: fullstack_app
     ports:
       - "80:80"
