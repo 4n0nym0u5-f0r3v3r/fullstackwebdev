@@ -14,8 +14,8 @@ EXPOSE 5000
 FROM nginx:alpine
 RUN apk add --no-cache nodejs npm supervisor
 COPY proxy/default.conf /etc/nginx/conf.d/default.conf
-COPY proxy/fullstackwebdev.crt /etc/nginx/ssl/fullstackwebdev.crt
-COPY proxy/fullstackwebdev.key /etc/nginx/ssl/fullstackwebdev.key
+COPY proxy/fullstackwebdev.pem /etc/nginx/ssl/fullstackwebdev.pem
+COPY proxy/fullstackwebdevkey.pem /etc/nginx/ssl/fullstackwebdevkey.pem
 COPY --from=frontend-build /app/frontend/build /usr/share/nginx/html
 WORKDIR /app/backend
 COPY --from=backend-build /app/backend .
